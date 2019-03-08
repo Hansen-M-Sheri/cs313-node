@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Postal Calculation Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+	.container{
+		display:block;
+		margin-top: 20%;
+  		margin-left: 20%;
+	}
+</style>
+</head>
+<body>
+	<div class="container col-sm-10">
+		<h1>Calculate Postage</h1>
+		<h3>Enter weight and mail type to calculate postage</h3>
+	<form class="form-horizontal" action="/getRate" method="get">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="weightOZ" value="Weight:">Weight (ounces):</label>
+			<div class="col-sm-4">
+				<input class="form-control" type="number" step="0.01" min="0" max="13" name="weightOZ">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2"for="mailType">Type:</label>
+			<div class="col-sm-4">
+				<select class="form-control" name="mailType">
+					<option value="Letter (Stamped)">Letters (Stamped)</option>
+					<option value="Letters (Metered)">Letters (Metered)</option>
+					<option value="Large Envelopes (Flats)">Large Envelopes (Flats)</option>
+					<option value="First-Class Package">First-Class Package</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-success">Calculate Postage Required</button>
+		    </div>
+			
+		</div>
+	</form>
+</div>
+
+</body>
+</html>
